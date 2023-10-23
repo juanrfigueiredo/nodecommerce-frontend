@@ -1,0 +1,20 @@
+{
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "next": "latest",
+    "react": "latest",
+    "react-dom": "latest"
+  },
+  "devDependencies": {
+    "prettier": "^3.0.3",
+    "typescript": "5.2.2",
+    "@types/node": "20.8.6",
+    "@types/react": "18.2.28",
+    "prettier-plugin-fort-imports": "^0.3.4"
+  }
+}
