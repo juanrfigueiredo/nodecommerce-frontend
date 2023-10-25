@@ -36,11 +36,15 @@
   padding: 10px;
   font-size: 1rem;
   border-radius: 5px;
-  background-color: #41dc63;
+  background-color: #31a94c;
   font-family: 'Poppins', sans-serif;
 }
 
 .entrar:hover {
   cursor: pointer;
-  background-color: #31a94c;
+  background-color: #41dc63;
+}
+
+.entrar:focus {
+  background-color: #41dc63;
 }

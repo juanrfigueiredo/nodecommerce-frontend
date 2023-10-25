@@ -1,28 +1,13 @@
+import { useAuth } from '../../contexts/auth.context';
 import styles from '../../styles/login.module.css';
 
-function LoginForm() {
-  function submitForm() {
+const LoginPage = () => {
+  const { signIn } = useAuth();
+  async function submitForm() {
+    
     const loginElement = document.getElementById('login') as HTMLInputElement;
     const passwordElement = document.getElementById('password') as HTMLInputElement;
-
-    fetch('http://localhost:3333/api/login/', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        username: loginElement.value,
-        password: passwordElement.value,
-      }),
-    }).then((response) => {
-      if (response.ok) {
-        return response.json()
-      }
-    }).then((data) => {
-      console.log(data)
-    }).catch((error) => {
-      console.log(error)
-    })
+    await signIn(loginElement.innerText, passwordElement.innerText, '/page2');
   }
 
   return(
@@ -42,8 +27,4 @@ function LoginForm() {
   )
 }
 
-export default function LoginPage() {
-  return (
-    <LoginForm/>
-  )
-}
+export default LoginPage;
